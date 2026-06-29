@@ -1,11 +1,28 @@
 const APP = {
 
-title: "23rd birthday",
+    title:"23birthday",
 
-name: "Shumma",
+    name:"Shumma",
 
-date: "2026.7.29 - 7.30"
+    tripDate:"2026.7.29 - 7.30",
 
-startDate: "2026-07-29"
+    startDate:"2026-07-29",
+
+    ending:`
+ここに最後のメッセージを書く
+`,
+
+    packing:[
+        "財布",
+        "スマホ",
+        "充電器",
+        "水着",
+        "ラッシュガード",
+        "タオル",
+        "サンダル",
+        "帽子",
+        "日焼け止め",
+        "プレゼント❤️"
+    ]
 
 };
