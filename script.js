@@ -20,6 +20,14 @@ app.innerHTML = `
 
 <p>${APP.date}</p>
 
+const today = new Date();
+
+const trip = new Date(APP.startDate);
+
+const diff = trip - today;
+
+const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
 <button id="startBtn">
 
 START JOURNEY
