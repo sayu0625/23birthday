@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>誕生日旅行</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Trip</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#111,#2b2b2b);
+    font-family:sans-serif;
+    color:white;
+}
+
+.box{
+    width:90%;
+    max-width:400px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(255,255,255,0.15);
+}
+
+h1{
+    margin-top:0;
+    font-size:34px;
+}
+
+p{
+    color:#ddd;
+}
+
+input{
+    width:90%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    margin-top:20px;
+    font-size:18px;
+    text-align:center;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 40px;
+    border:none;
+    border-radius:30px;
+    background:#ff5c8d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#result{
+    margin-top:30px;
+    display:none;
+    animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+</style>
+
 </head>
+
 <body>
-  <h1>🎂 Happy Birthday!</h1>
-  <p>7/29-30</p>
+
+<div class="box">
+
+<h1>🎂 Happy Birthday</h1>
+
+<p>
+今日の旅行にはまだ秘密があります。<br>
+パスワードを入力してください。
+</p>
+
+<input id="pw" type="password" placeholder="Password">
+
+<br>
+
+<button onclick="check()">OPEN</button>
+
+<div id="result">
+
+<h2>🎉 正解！</h2>
+
+<h3>最初の目的地は…</h3>
+
+<h2>🐄 マザー牧場</h2>
+
+<p>
+出発しよう！
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function check(){
+
+const password="birthday";
+
+const input=document.getElementById("pw").value;
+
+if(input===password){
+
+document.getElementById("result").style.display="block";
+
+}else{
+
+alert("パスワードが違います");
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
