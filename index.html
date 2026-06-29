@@ -214,6 +214,125 @@ font-size:14px;
 
 }
 
+.popup{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.55);
+
+animation:fade .4s;
+
+}
+
+.glass{
+
+width:90%;
+
+max-width:380px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:30px;
+
+text-align:center;
+
+color:white;
+
+}
+
+.glass h1{
+
+margin:20px 0;
+
+font-size:35px;
+
+}
+
+.glass input{
+
+margin-top:20px;
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:15px;
+
+font-size:18px;
+
+text-align:center;
+
+}
+
+.glass button{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:30px;
+
+background:white;
+
+color:#2196f3;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.glass a{
+
+display:inline-block;
+
+margin-top:20px;
+
+color:white;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
 </style>
 
 </head>
@@ -325,7 +444,80 @@ font-size:14px;
 <button class="start" onclick="openPassword()">
 START JOURNEY
 </button>
+<!-- パスワード画面 -->
 
+<div class="popup" id="popup">
+
+<div class="glass">
+
+<h2> Secret Mission</h2>
+
+<p>
+
+最初の目的地を知るには
+
+パスワードを入力してください
+
+</p>
+
+<input
+
+id="password"
+
+type="password"
+
+placeholder="Password"
+
+>
+
+<button onclick="checkPassword()">
+
+OPEN
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- TSUNAMI表示 -->
+
+<div class="popup" id="stage1">
+
+<div class="glass">
+
+<h2>Mission Complete 🌊</h2>
+
+<h1>🍔 TSUNAMI</h1>
+
+<p>
+
+最初の目的地はこちら！
+
+横須賀バーガーで旅のスタート✨
+
+</p>
+
+<a href="#">
+
+Google Map
+
+</a>
+
+<br><br>
+
+<button>
+
+NEXT
+
+</button>
+
+</div>
+
+</div>
+  
 <div class="footer">
 
 Made for Shumma
@@ -334,5 +526,35 @@ Made for Shumma
 
 </div>
 
+<script>
+
+const PASSWORD1="tsunami";
+
+function openPassword(){
+
+document.getElementById("popup").style.display="flex";
+
+}
+
+function checkPassword(){
+
+const input=document.getElementById("password").value;
+
+if(input===PASSWORD1){
+
+document.getElementById("popup").style.display="none";
+
+document.getElementById("stage1").style.display="flex";
+
+}else{
+
+alert("パスワードが違います");
+
+}
+
+}
+
+</script>
+  
 </body>
 </html>
